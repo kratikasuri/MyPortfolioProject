@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-eqiv="X-UA-Compatible" content="="IE=edge">
+        <meta name=""veiwport' content="width-device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <style>
+                                                                              *
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family:'poppins', sans-serif;
+} 
+body
+{
+    color: #6e2725;
+}
+.home-content {
+            max-width: 800px;
+}
+.home-content h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin: -3px 0;
+            opacity: 0;
+             animation: slideRight 1s ease forwards;
+             animation-delay: 1s;
+        }
+        .home-content h3 {
+            font-size: 40px;
+            font-weight: 700;
+            opacity: 0;
+            animation: slideBottom 1s ease forwards;
+            animation-delay: .7s;
+
+        }
+
+        .home-content h3:nth-last-of-type(2) {
+            margin-bottom: 40px;
+            animation: slideTop 1s ease forwards ;
+            animation-delay: .7s ;
+        }
+
+        .home-content h3 span{
+            color: #1e1b18;
+        }
+
+        .home-content p {
+            font-size: 30px;
+            opacity: 0;
+            animation:  slideleft 1s ease forwards;
+            animation-delay: 1s;
+
+        }
+.header
+{
+   position: fixed;
+   top: 0; 
+  left: 0;
+  width: 100%;
+  padding: 20px 5%;
+ background: transparent;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ z-index: 100;
+}
+
+.logo {
+   position: relative; 
+   font-size: 30px;
+    color: #6e2725;
+   text-decoration: none;
+   font-weight: bold;
+   cursor: default;
+   opacity: 0;
+   animation: slideRight 1s ease forwards;
+}
+.navbar a {
+  display: inline-block; 
+  font-size: 25px;
+  color: #6e2725;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 35px;
+  transition: .3s;
+  opacity: 0;
+  animation: slideTop .5s ease forwards ;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover{
+    color: #1e1b18;
+    text-shadow: 0 0  20px #6e2725
+}
+.home {
+    position: relative;
+    width: 100%;
+    justify-content: space-between ;
+    height: 100vh;
+    background: url(background.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 5% 0;
+}
+.home-sci a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #1e1b18 ;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #1e1b18;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+
+    margin: 30px 15px 30px 0;
+}
+.home-sci a:hover{
+    background: #6e2725;
+    color: blanchedalmond;
+    box-shadow: 0 0  20px #6e2725;
+}
+.btn-box{
+    display: inline-block;
+    padding:12px 28px ;
+    background: rgb(110, 39, 37);
+    border-radius:40px ;
+    font-size: 16px ;
+    color: blanchedalmond;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #1e1b18,
+    0 0 25px #1e1b18;
+}
+.btn-box:hover{
+    background: #6e2725;
+    color: blanchedalmond;
+    box-shadow: 0 0  20px #6e2725;
+}
+.about{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    background: url("background.jpeg") ;
+    background-size: cover; /* Optional: scales the image to cover the element */
+    background-position: center;
+    
+}
+.about-text{
+    color: #6e2725;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: 100px;
+    padding-bottom: 70px;
+
+}
+
+.about-text h2{
+    font-size: 60px;
+    margin: -3px 0;
+}
+.about-text h2 span{
+    color: #6e2725;
+    margin: -3px 0;
+}
+ .about-text h4{
+    font-size: 29px;
+    font-weight: 600;
+    color: #1e1b18;
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+.about-text p{
+    color: #6e2725;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+    max-width: 800px;
+
+}
+.services{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    background: url("background.jpeg") ;
+    background-size: cover; /* Optional: scales the image to cover the element */
+    background-position: center;
+}
+.sub-title {
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 70px;
+}
+.sub-title span{
+    color: #1e1b18;
+}
+.container{
+    padding: 90px;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(259px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div{
+    background-color: transparent;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 13px;
+    border-right: 10px;
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #6e2725,
+                1px 1px 40px  #1e1b18;
+
+}
+
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+ 
+.services-list div a{
+    text-decoration: none;
+    color:  blanchedalmond;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.read {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #6e2725;
+    border-radius: 40px;
+    font-size: 40px;
+    color: blanchedalmond;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #1e1b18,
+    0 0 25px #1e1b18;
+}
+.read:hover{
+    background: #6e2725;
+    color: blanchedalmond;
+    box-shadow: 0 0  20px #6e2725;
+}
+
+.services-list div:hover{
+    transform: translateY(-10px);
+}
+
+.container1{ 
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    background: url("background.jpeg") ;
+    background-size: cover; /* Optional: scales the image to cover the element */
+    background-position: center;
+    padding: 90px;
+}
+    
+.heading1{
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+.Technical-bars{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(110px,1fr));
+    grid-gap: 40px;
+}
+.bar{
+    background-color: transparent;
+    padding: 30px;
+    font-size: 13px;
+    font-weight: 13px;
+    border-right: 10px;
+    align-items: center;
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #6e2725,
+                1px 1px 40px  #1e1b18;
+}
+
+.bar div i{
+    font-size: 60px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+.info span{
+    font-size: medium;
+    font-weight: 550;
+    align-items: center;
+}
+
+.Technical-bars div:hover{
+    transform: translateY(-10px);
+}
+.portfolio{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 3rem;
+    padding-left: 30px;
+    background: url("background.jpeg") ;
+    background-size: cover; /* Optional: scales the image to cover the element */
+    background-position: center;
+    padding: 20px;
+}
+.main-text{
+    padding-top: 50px;
+    margin-top: 50px;
+}
+.main-text h2{
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
+    padding: 30px;
+}
+.main-text h2 span{
+    color :#0d0c0c;
+}
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(359px, auto));
+}
+.row{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px;
+}
+.row img{
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgb(0, 0, 0),#88413e);
+    position: absolute;
+    border-radius: 8px ;
+    left:0;
+    bottom: 0;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    transition: height 0.5s;
+}
+.layer h5{
+    color: rgb(255, 235, 205);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.layer p{
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.layer i{
+    color: rgb(26, 26, 25);
+    margin-top: 20px;
+    font-size: 20px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.row:hover img{
+    transform: scale(1.1);
+}
+.row:hover .layer{
+    height: 100%;
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+    padding-left: 30px;
+    background: url("background.jpeg") ;
+    background-size: cover; /* Optional: scales the image to cover the element */
+    background-position: center;
+    padding: 40px;
+}
+.contact-text h2{
+    font-size: 60px;
+    line-height: 1;
+    text-align: left;
+}
+.contact-text h2 span{
+color: #0d0c0c;
+}
+.contact-text h4{
+    margin: 15px 0;
+    color: #88413e;
+    font-size: 20px;
+    font-weight: 600;
+}
+.contact-text p{
+    color: #6e2725;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 2rem;
+
+}
+.Contact-list{
+    margin-bottom: 3rem;
+}
+
+.Contact-list li{
+    margin-bottom: 10px;
+    display: block;
+}
+.Contact-list i{
+    display: inline-block;
+    color: #0d0c0c;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .40s ease;
+}
+
+.Contact-list li a:hover{
+    transform: scale(1.01) translateY(-5px);
+    color: #0d0c0c;
+}
+
+.contact-icons i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #1e1b18 ;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #1e1b18;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.contact-icons i:hover{
+    background: #6e2725;
+    color: blanchedalmond;
+    box-shadow: 0 0  20px #6e2725;
+}
+ 
+.contact-form form{
+    position: relative;
+}
+.contact-form form input,form textarea{
+
+    border: none;
+    outline: #0d0c0c;
+    width: 90%;
+    padding: 10px;
+    background: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+
+}
+.contact-form textarea{
+    resize: none;
+    height: 220px;
+
+}
+.contact-form form .send{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #6e2725;
+    border-radius: 40px;
+    font-size: 40px;
+    color: blanchedalmond;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #1e1b18,
+    0 0 25px #1e1b18;
+}
+
+.contact-form form .send:hover{
+    background: #6e2725;
+    color: blanchedalmond;
+    box-shadow: 0 0  20px #6e2725;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes slideRight {
+    0%{
+       transform: translateX(-100px);
+       opacity: 0; 
+    }
+    100%{
+        transform:  translateX(0px);
+        opacity: 1 ;
+    }
+}
+
+@keyframes slideleft {
+    0%{
+       transform: translateX(100px);
+       opacity: 0; 
+    }
+    100%{
+        transform:  translateX(0px);
+        opacity: 1 ;
+    }
+}
+@keyframes slideTop {
+    0%{
+       transform: translateY(100px);
+       opacity: 0; 
+    }
+    100%{
+        transform:  translateY(0px);
+        opacity: 1 ;
+    }
+}
+@keyframes slideBottom {
+    0%{
+       transform: translateY(-100px);
+       opacity: 0; 
+    }
+    100%{
+        transform:  translateY(0px);
+        opacity: 1 ;
+    }
+}
+                                                                              }         </style>
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="logo">Portfolio</a>
+
+            <nav class ="navbar">
+                <a href="#" style="--i:1" class="active"> Home</a>
+                <a href="#about" style="--i:2" > About</a>
+                <a href="#Skills" style="--i:3" > Skill</a>
+                <a href="https://drive.google.com/file/d/1f9jQuA7tWMG2dRFfVm_xYo7bdrgISNui/view?usp=sharing" style="--i:4"> Portfolio</a>
+                <a href="#contact" style="--i:5"> Contact</a>
+            </nav>
+        </header>
+        <section class="home">
+            <div class="home-content">
+                <h3>Hello, it's me</h3>
+                <h1> Kratika Suri</h1>
+                <h3> And I'm a <span id="text"></span> </h3>
+                <p>I'm a Web Development student .
+                    <br> expertise is to create website design, Frontend design,
+                    <br> and many more.....
+                </p>
+                <div class="home-sci">
+                    <a href="mailto:surikritika23@gmail.com" style="--i:7"><i class='bx bxl-gmail'></i></a>
+                    <a href="https://wa.me/916264784593" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="https://www.linkedin.com/in/kratika-suri-429229228/" style="--i:9"><i class='bx bxl-linkedin' ></i></a>
+                 </div>
+                 <a href="https://drive.google.com/file/d/1f9jQuA7tWMG2dRFfVm_xYo7bdrgISNui/view?usp=sharing" class="btn-box">More About Me</a>
+            </div>
+        </section>
+
+       <section class="about" id="about">
+        <div class="about-text">
+            <h2>About<span>Me</span></h2>
+            <h4>Full Stack Developer!</h4> 
+                <p class="shift-right">I am a skilled web designer. My passion lies in creating captivating website designs and
+                 implementing them through frontend development. I take pride in staying
+                  up-to-date with current design trends and leveraging my creativity to
+                   produce visually appealing and user-friendly websites.I have developed a deep understanding of user experience (UX)
+                     and user interface (UI) principles.
+                     <br>
+                By putting myself in the shoes of the end-users, I strive to create 
+                intuitive and seamless browsing experiences. I believe that a well-designed
+                 website should not only look visually appealing but also provide a smooth and 
+                 enjoyable interaction for visitors. When starting a new project, I thoroughly 
+                 research and analyze the target audience and the client's specific requirements.
+                  This enables me to tailor my designs to meet their expectations and deliver a unique 
+                  online presence that aligns with their brand identity..</p>
+                  <a href="https://drive.google.com/file/d/1f9jQuA7tWMG2dRFfVm_xYo7bdrgISNui/view?usp=sharing" class="btn-box">More About Me</a>
+        </div>
+       </section>
+
+       <section id="services"> 
+         <div class="services" >
+               <div class=" container">
+                  <h1 class ="sub-title">My <span>Services</span></h1>
+                 <div class="services-list">
+                      <div>
+                         <i class='bx bx-code-alt'></i>
+                          <h2>UI/UX Design</h2>
+                           <p>I specialize in creating intuitive and visually engaging user interfaces that enhance user experiences and drive engagement.
+                           <br>
+                            My passion lies in blending aesthetic design with functionality to create seamless digital interactions.</p>
+                            <a href= "#" class="read"> Learn more</a>
+                        </div>
+                       <div>
+                            <i class='bx bxl-javascript' ></i>
+                           <h2>Full MERN Stack Developer</h2>
+                           <p>I build dynamic and scalable web applications. 
+                           My expertise lies in creating end-to-end solutions that 
+                            deliver robust performance and seamless user experiences.</p>
+                         <a href= "#" class="read"> Learn more</a>
+                      </div>
+                      <div>
+                            <i class='bx bxl-c-plus-plus'></i>
+                            <h2>Software Developer</h2>
+                             <p>I can design and implement server-side logic, databases, and APIs. 
+                            By using DSA to optimize application performance, manage data efficiently, 
+                            and ensure that backend services are robust and scalable.</p>
+                            <a href= "#" class="read"> Learn more</a>
+                        </div>
+                  </div>
+             </div>
+         </div>
+       </section>
+        <section id="Skills">
+            <div class="container1" >
+                        <h1 class="sub-title">My <span> Skills</span></h1>
+                        <h1 class="heading1"> Technical Skills</h1>
+               <div class="Technical-bars">
+                       <div class="bar">
+                        
+                           <div class="info"><i style="color: #c95d2e"  class='bx bxl-html5'></i>
+                               <span> HTML/CSS</span>
+                            </div>
+                    
+                        </div>
+                       <div class="bar">
+                            <div class="info"><i style="color: #b0bc1e" class='bx bxl-javascript' ></i>
+                                <span>JavaScript (React.js, Node.js, Express.js) </span>
+                            </div>
+                    
+                        </div>
+                        <div class="bar">
+                            <div class="info"><i style="color: #147BBC" class='bx bxl-c-plus-plus' ></i>
+                                 <span> C/C++</span>
+                            </div>
+                    
+                        </div>
+                        <div class="bar">
+                            <div class="info"><i style="color: #950808" class='bx bxl-java' ></i>
+                             <span> JAVA</span>
+                            </div>
+                    
+                         </div>
+                      <div class="bar">
+                          <div class="info">
+                             <span> Worked With JDBC Drivers
+                             </span>
+                        </div>
+                    
+                    
+                </div>
+                <div class="bar">
+                    <div class="info"><i style="color: #f09800" class='bx bxs-data'></i>
+                        <span> SQL Database
+                        </span>
+                    </div>
+                  
+                    
+                </div>
+                <div class="bar">
+                    <div class="info">
+                        <span> Web logics
+                        </span>
+                    </div>
+                   
+                </div>
+                <div class="bar">
+                    <div class="info"><i style="color: #147BBC" class='bx bxl-graphql'></i>
+                        <span> Data Structure and Algorithms
+                        </span>
+                    </div>
+                  
+                </div>
+                
+                </div>
+
+            </div>
+        </section>
+
+        <section id="project">
+            <div class="portfolio" >
+                <div class="main-text" id="project">
+                    <h2> Latest<span>Project</span></h2>
+
+                    <div class="portfolio-content">
+                        <div class="row">
+                            <img src="UX.png">
+                            <div class="layer">
+                                <h5>UI/UX Design</h5>
+                                <p>I developed a comprehensive UI/UX design project using Figma, creating intuitive and visually appealing 
+                                    interfaces.
+                                     </p>
+
+                                     <a href="https://ieee.msit.in/"><i class='bx bx-link-external' ></i></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <img src="E-commerce.png">
+                            <div class="layer">
+                                <h5>MERN Stack Project</h5>
+                                <p>I built a dynamic e-commerce alcohol shopping web page using the MERN stack, 
+                             offering a seamless and secure shopping experience.
+                                     
+                                     </p>
+
+                                     <a href="#"><i class='bx bx-link-external' ></i></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <img src="to-do-list.png">
+                            <div class="layer">
+                                <h5>To-do-list</h5>
+                                <p>I created a user-friendly to-do list application that allows users to easily enter, manage, and track their tasks.
+                                     </p>
+
+                                     <a href="https://to-do-list-lemon-seven.vercel.app/"><i class='bx bx-link-external' ></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="contact" id="contact">
+  <div class="contact-text">
+    <h2>Contact<span>Me</span></h2>
+    <h4> Let's Work Together</h4>
+    <p>I am a skilled developer with a proven track record in creating and building dynamic web applications.
+         Let’s collaborate to bring your project to life with innovative solutions and a focus on user engagement.</p>
+    <div class="Contact-list">
+       <li><i class='bx bx-send' ></i>surikritika23@gmail.com</li>
+    <li><i class='bx bxs-phone'></i>+91 6264784593</li>
+    </div>
+    <div class="contact-icons">
+        <a href="#"><i class='bx bxl-gmail' ></i></a>
+        <a href="#"><i class='bx bxl-linkedin' ></i></a>
+        <a href="#"><i class='bx bxs-phone' ></i></a>
+    </div>
+    </div>
+<div class="contact-form">
+    <form action="">
+        <input type="" placeholder="Enter Your Name" required>
+        <input type="email" placeholder="Enter your Email" required>
+        <input type="" placeholder="Enter Your Subject">
+        <textarea name="" id="" cols="40" rows="10" placeholder="Enter your Message" required></textarea>
+        <input type="Submit" value="Submit" class="send">
+    </form>
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="main.js"></script>
+    </body>
+</html>
